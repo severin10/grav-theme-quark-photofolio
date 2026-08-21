@@ -69,11 +69,3 @@ Based on [Quark 2](https://github.com/getgrav/grav-theme-quark2) by Team
 Grav (MIT License) — the Blades CSS design tokens, fonts, and asset
 pipeline are reused as-is; the layout, templates, gallery/lightbox
 behaviour, and image-derivative pipeline are new.
-
-## Before publishing to the Grav Theme Library
-
-- [ ] Fill in `author`, `homepage`, and `bugs` in `quark-photofolio.yaml`.
-- [ ] Add a real `screenshot.jpg` and `thumbnail.jpg` (theme root) once the
-      site has actual photos.
-- [ ] Push to a public Git repo and follow the
-      [Grav theme submission guide](https://learn.getgrav.org/themes/theme-submission).
