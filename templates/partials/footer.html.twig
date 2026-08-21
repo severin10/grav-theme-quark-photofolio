@@ -1,27 +1,21 @@
+{#
+    Contact and Support are theme-owned slots, not theme-owned content: the
+    heading stays here so the section always has something to show and the
+    nav anchor always has somewhere to land, but the actual body is left to
+    whatever a site or plugin (e.g. a separate contact-form plugin) chooses
+    to put in these partials. Neither exists in the theme itself.
+#}
 <section id="contact" class="section placeholder-section">
     <div class="container">
-        <h2>{{ 'THEME_QUARK_PHOTOFOLIO.PLACEHOLDER.CONTACT_TITLE'|t }}</h2>
-        {#
-            TODO: replace with a real Grav form. The `form` plugin is already
-            installed (user/plugins/form). Add a `form:` block to this page's
-            frontmatter with a honeypot field (built into Grav's form plugin,
-            see https://learn.getgrav.org/forms/spam-protection) for spam
-            protection, then render it here with:
-                {% include 'forms/form.html.twig' with { form: page.forms|first } %}
-        #}
-        <p class="placeholder-note">{{ 'THEME_QUARK_PHOTOFOLIO.PLACEHOLDER.CONTACT_NOTE'|t }}</p>
+        <h2>{{ 'THEME_QUARK_PHOTOFOLIO.SECTIONS.CONTACT_TITLE'|t }}</h2>
+        {% include 'partials/contact.html.twig' ignore missing %}
     </div>
 </section>
 
 <section id="support" class="section placeholder-section">
     <div class="container">
-        <h2>{{ 'THEME_QUARK_PHOTOFOLIO.PLACEHOLDER.COFFEE_TITLE'|t }}</h2>
-        {#
-            TODO: drop in a "Buy me a coffee" button/widget here, e.g.:
-                <a href="https://www.buymeacoffee.com/<username>" class="bmc-button">☕ Buy me a coffee</a>
-            or their embeddable widget script.
-        #}
-        <p class="placeholder-note">{{ 'THEME_QUARK_PHOTOFOLIO.PLACEHOLDER.COFFEE_NOTE'|t }}</p>
+        <h2>{{ 'THEME_QUARK_PHOTOFOLIO.SECTIONS.SUPPORT_TITLE'|t }}</h2>
+        {% include 'partials/support.html.twig' ignore missing %}
     </div>
 </section>
 

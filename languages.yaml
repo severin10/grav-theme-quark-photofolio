@@ -7,11 +7,9 @@ en:
       CLOSE_VIEWER: "Close (Esc)"
     VIEWER:
       HINT: "Press Esc or click outside the photo to close"
-    PLACEHOLDER:
+    SECTIONS:
       CONTACT_TITLE: "Contact"
-      CONTACT_NOTE: "A contact form with spam protection is coming soon."
-      COFFEE_TITLE: "Support"
-      COFFEE_NOTE: "A “buy me a coffee” link is coming soon."
+      SUPPORT_TITLE: "Support"
 
 de:
   THEME_QUARK_PHOTOFOLIO:
@@ -22,8 +20,6 @@ de:
       CLOSE_VIEWER: "Schliessen (Esc)"
     VIEWER:
       HINT: "Esc drücken oder neben das Foto klicken zum Schliessen"
-    PLACEHOLDER:
+    SECTIONS:
       CONTACT_TITLE: "Kontakt"
-      CONTACT_NOTE: "Ein Kontaktformular mit Spam-Schutz folgt in Kürze."
-      COFFEE_TITLE: "Unterstützen"
-      COFFEE_NOTE: "Ein „Buy me a coffee“-Link folgt in Kürze."
+      SUPPORT_TITLE: "Unterstützen"

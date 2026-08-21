@@ -231,13 +231,6 @@ body.viewer-open {
   margin: 0 0 0.5rem;
 }
 
-.placeholder-note {
-  color: var(--q2-text-muted);
-  font-style: italic;
-  font-size: 0.9rem;
-  margin: 0;
-}
-
 /* ---------- Footer ---------- */
 
 .footer-credit {

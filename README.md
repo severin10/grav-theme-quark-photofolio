@@ -53,15 +53,20 @@ width), and transparency (0 = fully opaque, higher values fade it out —
 100 makes it fully invisible) are all configurable there, as is the
 thumbnail's target size (default 800px on the longer edge).
 
-## Placeholders
+## Contact & Support
 
-Two sections are reserved at the bottom of the page and ready to be wired
-up:
+Two sections are reserved at the bottom of the page, each a heading plus an
+empty, optional include:
 
-- **Contact** — `templates/partials/footer.html.twig` has a `TODO` where a
-  real Grav form (the `form` plugin is already installed) with spam
-  protection (e.g. Grav's built-in honeypot field) belongs.
-- **Support** — same file, `TODO` for a "Buy me a coffee" button/widget.
+- **Contact** — drop a `templates/partials/contact.html.twig` into your site
+  (or a plugin) to fill it in, e.g. a real Grav form (the `form` plugin is
+  already installed) with spam protection such as Grav's built-in honeypot
+  field.
+- **Support** — same idea, via `templates/partials/support.html.twig`, e.g.
+  a "Buy me a coffee" button/widget.
+
+Neither partial exists in the theme itself — until one does, its section
+just shows the heading with nothing underneath.
 
 ## Credits
 
