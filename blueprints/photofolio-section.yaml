@@ -1,0 +1,25 @@
+title: Photo Section
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.photos.items:
+              name: items
+              type: list
+              label: Photos
+              help: Upload full-size photos in the Media tab below, then list them here in display order. Title is optional and appears subtly over the photo.
+              style: vertical
+              collapsed: true
+
+              fields:
+                .image:
+                  type: filepicker
+                  label: Photo
+                  preview_images: true
+                .title:
+                  type: text
+                  label: Title (optional)

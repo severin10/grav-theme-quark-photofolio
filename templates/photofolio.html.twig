@@ -1,0 +1,53 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+<div class="container intro-container">
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% if page.header.subtitle %}<p class="page-subtitle">{{ page.header.subtitle }}</p>{% endif %}
+    {% if page.content %}<div class="intro-content">{{ page.content|raw }}</div>{% endif %}
+</div>
+
+{% set watermark_field = theme_var('watermark_image') %}
+{% set watermark_first = (watermark_field is iterable and watermark_field|length > 0) ? watermark_field|first : null %}
+{% set watermark_name = watermark_first.name|default(null) %}
+{% set watermark_tile_size = theme_var('watermark_tile_size')|default(10) %}
+{% set watermark_spacing = theme_var('watermark_spacing')|default(8) %}
+{% set watermark_transparency = theme_var('watermark_transparency')|default(0) %}
+{% set thumb_size = theme_var('thumb_size')|default(800) %}
+
+{% for photo_section in page.children %}
+
+    {% set items = photo_section.header.photos.items|default([]) %}
+    {% if items|length %}
+    <section id="{{ photo_section.slug }}" class="section photo-section">
+        <div class="container">
+            <h2 class="photo-section__title">{{ photo_section.title }}</h2>
+            <div class="masonry">
+                {% for item in items if item.image %}
+                    {% set media = photo_section.media[item.image] %}
+                    {% if media %}
+                        {% set landscape = media.width >= media.height %}
+                        {% set ratio = media.width / media.height %}
+                        {% set tw = landscape ? thumb_size : (thumb_size * ratio)|round %}
+                        {% set th = landscape ? (thumb_size / ratio)|round : thumb_size %}
+                        {% set thumb_url = landscape ? media.resize(thumb_size).url : media.resize(null, thumb_size).url %}
+                        {% if watermark_name %}
+                            {% set full_url = tile_watermark(media, 'theme://images/watermark/' ~ watermark_name, watermark_tile_size, watermark_spacing, watermark_transparency) %}
+                        {% else %}
+                            {% set full_url = media.url %}
+                        {% endif %}
+                        {% set title = item.title|default('') %}
+                        <figure class="photo-item">
+                            <button type="button" class="photo-trigger" data-full="{{ full_url }}" data-title="{{ title|e('html_attr') }}">
+                                <img src="{{ thumb_url }}" width="{{ tw }}" height="{{ th }}" loading="lazy" decoding="async" alt="{{ title|default(photo_section.title) }}" />
+                                {% if title %}<figcaption class="photo-item__title">{{ title }}</figcaption>{% endif %}
+                            </button>
+                        </figure>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+{% endfor %}
+{% endblock %}

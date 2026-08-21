@@ -1,0 +1,109 @@
+name: Quark Photofolio
+slug: quark-photofolio
+type: theme
+version: 0.1.0
+description: A minimal, one-page photography portfolio theme built on the Quark 2 / Blades CSS foundation. Groups photos into sections, keeps the image itself the focus, opens a distraction-free fullscreen viewer on click, and automatically derives a web-sized thumbnail plus a watermarked full-size version from each upload.
+icon: camera-retro
+author:
+  name: 'Severin'
+  email: dietschiseverin@gmail.com
+  url: 'https://github.com/severin10'
+homepage: 'https://github.com/severin10/grav-theme-quark-photofolio'
+keywords: photofolio, photography, portfolio, one-page, onepager, gallery, lightbox, watermark, quark, dark, minimal
+bugs: 'https://github.com/severin10/grav-theme-quark-photofolio/issues'
+license: MIT
+compatibility:
+  grav: ['1.7', '1.8', '2.0']
+dependencies:
+  - { name: grav, version: '>=1.7.0' }
+
+form:
+  validation: loose
+
+  fields:
+
+    accent-color:
+      type: colorpicker
+      label: Accent Color
+      help: Tints links and focus rings. Leave blank for the pure monochrome dark palette.
+      default: ''
+
+    header_section:
+      type: section
+      title: Header
+      underline: true
+
+    custom_logo:
+      type: file
+      label: Custom Logo
+      help: Optional. Saved to user/themes/quark-photofolio/images/logo. Falls back to the site title as text if left empty.
+      size: large
+      destination: 'theme://images/logo'
+      multiple: false
+      markdown: true
+      accept:
+        - image/*
+
+    watermark_section:
+      type: section
+      title: Watermark
+      underline: true
+
+    watermark_image:
+      type: file
+      label: Watermark Logo
+      help: A small logo/signature (PNG with transparency recommended) composited onto the full-size version of every photo. Leave empty to skip watermarking.
+      size: large
+      destination: 'theme://images/watermark'
+      multiple: false
+      accept:
+        - image/*
+
+    watermark_tile_size:
+      type: text
+      label: Watermark Tile Size (%)
+      help: Size of each repeated watermark tile, as a percentage of the photo's width. The watermark is tiled across the whole photo, not placed once.
+      size: x-small
+      default: 10
+      validate:
+        type: int
+        min: 1
+        max: 50
+
+    watermark_spacing:
+      type: text
+      label: Watermark Spacing (%)
+      help: Gap between repeated watermark tiles, as a percentage of the photo's width.
+      size: x-small
+      default: 8
+      validate:
+        type: int
+        min: 0
+        max: 100
+
+    watermark_transparency:
+      type: text
+      label: Watermark Transparency (%)
+      help: 0 = fully opaque (normal). Higher values fade the watermark out; 100 makes it fully invisible, which defeats its purpose but is allowed.
+      size: x-small
+      default: 0
+      validate:
+        type: int
+        min: 0
+        max: 100
+
+    gallery_section:
+      type: section
+      title: Gallery
+      underline: true
+
+    thumb_size:
+      type: text
+      label: Thumbnail Size (px)
+      help: Longer edge of the on-page thumbnail. The original is never served directly — only this thumbnail and the watermarked full version.
+      size: x-small
+      default: 800
+      validate:
+        type: int
+        min: 200
+        max: 2000

@@ -1,0 +1,89 @@
+{% set accent = theme_var('accent-color') %}
+{% set accent_is_hex = accent and accent matches '/^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$/' %}
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}" data-theme="dark">
+<head>
+{% block head %}
+    <meta charset="utf-8" />
+    <title>{% if page.title %}{{ page.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+
+    {% include 'partials/metadata.html.twig' %}
+
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ url('theme://fonts/cal-sans/cal-sans-latin.woff2') }}" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="{{ url('theme://fonts/inter/inter-latin.woff2') }}" />
+
+    {% if accent_is_hex %}
+    <style>
+      :root[data-theme='dark'] {
+        --q2-accent: color-mix(in oklab, {{ accent }} 80%, white 20%);
+        --q2-accent-contrast: #ffffff;
+        --q2-link: color-mix(in oklab, {{ accent }} 75%, white 25%);
+        --q2-focus-ring: color-mix(in oklab, {{ accent }} 45%, transparent);
+      }
+    </style>
+    {% endif %}
+{% endblock head %}
+
+{% block stylesheets %}
+    {% do assets.addCss('theme://css/fonts.css', 100) %}
+    {% do assets.addCss('theme://css/blades.min.css', 95) %}
+    {% do assets.addCss('theme://css/theme.css', 90) %}
+    {% do assets.addCss('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css', 87) %}
+    {% do assets.addCss('theme://css/photofolio.css', 85) %}
+    {% do assets.addCss('theme://css/custom.css', 80) %}
+{% endblock %}
+
+{% block javascripts %}
+    {% do assets.addJs('theme://js/photofolio.js', {group:'bottom', priority: 100}) %}
+{% endblock %}
+
+{% block assets %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+</head>
+<body id="top">
+    <div id="page-wrapper">
+    {% block header %}
+        <header id="header" class="section">
+            <div class="container header-bar">
+                <a href="{{ home_url }}" class="navbar-brand" aria-label="{{ site.title }}" title="{{ site.title }}">
+                    {% include 'partials/logo.html.twig' %}
+                </a>
+                {% block header_navigation %}
+                    {% include 'partials/navigation.html.twig' %}
+                {% endblock %}
+            </div>
+        </header>
+    {% endblock %}
+
+        <main id="start">
+        {% block body %}
+            {% block messages %}
+                {% include 'partials/messages.html.twig' ignore missing %}
+            {% endblock %}
+            {% block content %}{% endblock %}
+        {% endblock %}
+        </main>
+
+    </div>
+
+    {% block footer %}
+        {% include 'partials/footer.html.twig' %}
+    {% endblock %}
+
+    {% block viewer %}
+        {% include 'partials/viewer.html.twig' %}
+    {% endblock %}
+
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+</body>
+</html>

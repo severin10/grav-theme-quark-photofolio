@@ -1,0 +1,8 @@
+<nav class="section-nav" aria-label="{{ 'THEME_QUARK_PHOTOFOLIO.ARIA.PRIMARY_NAV'|t|e('html_attr') }}">
+    <ul>
+        {% for child in page.children %}
+            <li><a href="#{{ child.slug }}">{{ child.title }}</a></li>
+        {% endfor %}
+        <li><a href="#contact">{{ 'THEME_QUARK_PHOTOFOLIO.PLACEHOLDER.CONTACT_TITLE'|t }}</a></li>
+    </ul>
+</nav>

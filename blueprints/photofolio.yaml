@@ -1,0 +1,13 @@
+title: Photo One-Pager
+'@extends': default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            header.subtitle:
+              type: text
+              label: Subtitle
+              help: Optional line shown under the site title at the top of the page.

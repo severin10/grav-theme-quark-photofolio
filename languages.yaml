@@ -1,0 +1,29 @@
+en:
+  THEME_QUARK_PHOTOFOLIO:
+    ARIA:
+      PRIMARY_NAV: "Sections"
+      OPEN_MENU: "Open menu"
+      VIEWER: "Photo viewer"
+      CLOSE_VIEWER: "Close (Esc)"
+    VIEWER:
+      HINT: "Press Esc or click outside the photo to close"
+    PLACEHOLDER:
+      CONTACT_TITLE: "Contact"
+      CONTACT_NOTE: "A contact form with spam protection is coming soon."
+      COFFEE_TITLE: "Support"
+      COFFEE_NOTE: "A “buy me a coffee” link is coming soon."
+
+de:
+  THEME_QUARK_PHOTOFOLIO:
+    ARIA:
+      PRIMARY_NAV: "Abschnitte"
+      OPEN_MENU: "Menü öffnen"
+      VIEWER: "Fotoansicht"
+      CLOSE_VIEWER: "Schliessen (Esc)"
+    VIEWER:
+      HINT: "Esc drücken oder neben das Foto klicken zum Schliessen"
+    PLACEHOLDER:
+      CONTACT_TITLE: "Kontakt"
+      CONTACT_NOTE: "Ein Kontaktformular mit Spam-Schutz folgt in Kürze."
+      COFFEE_TITLE: "Unterstützen"
+      COFFEE_NOTE: "Ein „Buy me a coffee“-Link folgt in Kürze."

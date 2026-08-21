@@ -1,0 +1,12 @@
+{% set logo = theme_var('custom_logo') %}
+{% set logo_first = (logo is iterable and logo|length > 0) ? logo|first : null %}
+{% set logo_file = logo_first.name|default(null) %}
+{% if logo_file %}
+    {% if logo_file|lower ends with '.svg' %}
+        {{ svg_image('theme://images/logo/' ~ logo_file)|raw }}
+    {% else %}
+        <img src="{{ url('theme://images/logo/' ~ logo_file) }}" alt="{{ site.title }}" class="site-logo" />
+    {% endif %}
+{% else %}
+    <span class="site-logo-text">{{ site.title }}</span>
+{% endif %}

@@ -1,0 +1,36 @@
+<section id="contact" class="section placeholder-section">
+    <div class="container">
+        <h2>{{ 'THEME_QUARK_PHOTOFOLIO.PLACEHOLDER.CONTACT_TITLE'|t }}</h2>
+        {#
+            TODO: replace with a real Grav form. The `form` plugin is already
+            installed (user/plugins/form). Add a `form:` block to this page's
+            frontmatter with a honeypot field (built into Grav's form plugin,
+            see https://learn.getgrav.org/forms/spam-protection) for spam
+            protection, then render it here with:
+                {% include 'forms/form.html.twig' with { form: page.forms|first } %}
+        #}
+        <p class="placeholder-note">{{ 'THEME_QUARK_PHOTOFOLIO.PLACEHOLDER.CONTACT_NOTE'|t }}</p>
+    </div>
+</section>
+
+<section id="support" class="section placeholder-section">
+    <div class="container">
+        <h2>{{ 'THEME_QUARK_PHOTOFOLIO.PLACEHOLDER.COFFEE_TITLE'|t }}</h2>
+        {#
+            TODO: drop in a "Buy me a coffee" button/widget here, e.g.:
+                <a href="https://www.buymeacoffee.com/<username>" class="bmc-button">☕ Buy me a coffee</a>
+            or their embeddable widget script.
+        #}
+        <p class="placeholder-note">{{ 'THEME_QUARK_PHOTOFOLIO.PLACEHOLDER.COFFEE_NOTE'|t }}</p>
+    </div>
+</section>
+
+<footer id="footer" class="section section-tight">
+    <div class="container">
+        <p class="footer-credit">
+            &copy; {{ "now"|date("Y") }} {{ site.title }} —
+            <a href="https://getgrav.org">Grav</a> theme based on
+            <a href="https://github.com/getgrav/grav-theme-quark2">Quark 2</a>.
+        </p>
+    </div>
+</footer>
