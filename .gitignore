@@ -1,0 +1,4 @@
+# Uploaded via the theme's "Custom Logo" config field — personal branding,
+# not something to impose on other users of this theme.
+/images/logo/*
+!/images/logo/.gitkeep
