@@ -3,6 +3,14 @@
         <i class="fa-solid fa-xmark" aria-hidden="true"></i>
     </button>
     <img class="photo-viewer__image" alt="" />
-    <p class="photo-viewer__caption"></p>
+    <div class="photo-viewer__nav">
+        <button type="button" class="photo-viewer__prev" data-viewer-prev aria-label="{{ 'THEME_QUARK_PHOTOFOLIO.ARIA.PREV_PHOTO'|t|e('html_attr') }}">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <p class="photo-viewer__caption"></p>
+        <button type="button" class="photo-viewer__next" data-viewer-next aria-label="{{ 'THEME_QUARK_PHOTOFOLIO.ARIA.NEXT_PHOTO'|t|e('html_attr') }}">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+    </div>
     <p class="photo-viewer__hint">{{ 'THEME_QUARK_PHOTOFOLIO.VIEWER.HINT'|t }}</p>
 </div>

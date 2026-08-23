@@ -5,6 +5,8 @@ en:
       OPEN_MENU: "Open menu"
       VIEWER: "Photo viewer"
       CLOSE_VIEWER: "Close (Esc)"
+      PREV_PHOTO: "Previous photo"
+      NEXT_PHOTO: "Next photo"
     VIEWER:
       HINT: "Press Esc or click outside the photo to close"
     SECTIONS:
@@ -18,6 +20,8 @@ de:
       OPEN_MENU: "Menü öffnen"
       VIEWER: "Fotoansicht"
       CLOSE_VIEWER: "Schliessen (Esc)"
+      PREV_PHOTO: "Vorheriges Foto"
+      NEXT_PHOTO: "Nächstes Foto"
     VIEWER:
       HINT: "Esc drücken oder neben das Foto klicken zum Schliessen"
     SECTIONS:

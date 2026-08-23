@@ -171,11 +171,45 @@
   border-radius: var(--q2-radius-sm);
 }
 
+.photo-viewer__nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .photo-viewer__caption {
   color: rgba(255, 255, 255, 0.85);
   font-size: 0.85rem;
   letter-spacing: 0.03em;
   margin: 0;
+}
+
+.photo-viewer__prev,
+.photo-viewer__next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: var(--q2-radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.photo-viewer__prev:hover,
+.photo-viewer__prev:focus-visible,
+.photo-viewer__next:hover,
+.photo-viewer__next:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.photo-viewer__prev[hidden],
+.photo-viewer__next[hidden] {
+  display: none;
 }
 
 .photo-viewer__hint {

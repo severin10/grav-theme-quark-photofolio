@@ -1,3 +1,13 @@
+# 0.1.5
+## 2026-08-23
+
+1. [](#new)
+   * Fullscreen viewer: previous/next navigation across all photos on the
+     page (wraps at both ends) — Left/Right arrow keys, plus visible
+     chevron buttons either side of the photo title (just the two arrows,
+     with no gap between them, when a photo has no title). Hidden entirely
+     when the page only has one photo.
+
 # 0.1.4
 ## 2026-08-23
 
