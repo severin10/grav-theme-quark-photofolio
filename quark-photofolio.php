@@ -30,9 +30,17 @@ class QuarkPhotofolio extends Theme
 
     public function onTwigInitialized()
     {
-        $this->grav['twig']->twig->addFunction(
+        $twig = $this->grav['twig'];
+
+        $twig->twig->addFunction(
             new \Twig\TwigFunction('tile_watermark', [$this, 'tileWatermark'])
         );
+
+        // Grav's form plugin renders submit/reset buttons with a plain
+        // "button" class unless a theme names one of its own. .btn is
+        // already defined (inherited from Quark 2's theme.css) but nothing
+        // used it, so form buttons rendered with no real styling.
+        $twig->twig_vars['form_button_classes'] = 'btn';
     }
 
     /**

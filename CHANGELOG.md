@@ -1,3 +1,11 @@
+# 0.1.3
+## 2026-08-23
+
+1. [](#bugfix)
+   * Form submit/reset buttons now get the theme's `.btn` class
+     (`form_button_classes`), so they render with real styling instead of a
+     bare, unstyled `<button>`
+
 # 0.1.2
 ## 2026-08-22
 
