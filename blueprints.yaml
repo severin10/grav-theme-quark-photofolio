@@ -1,7 +1,7 @@
 name: Quark Photofolio
 slug: quark-photofolio
 type: theme
-version: 0.1.1
+version: 0.1.2
 description: A minimal, one-page photography portfolio theme built on the Quark 2 / Blades CSS foundation. Groups photos into sections, keeps the image itself the focus, opens a distraction-free fullscreen viewer on click, and automatically derives a web-sized thumbnail plus a watermarked full-size version from each upload.
 icon: camera-retro
 author:
