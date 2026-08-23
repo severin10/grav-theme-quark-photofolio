@@ -45,7 +45,6 @@
 
 {% block assets %}
     {{ assets.css()|raw }}
-    {{ assets.js()|raw }}
 {% endblock %}
 </head>
 <body id="top">
@@ -83,6 +82,11 @@
     {% endblock %}
 
 {% block bottom %}
+    {# Both groups are output here, at the very end, not in <head> — assets
+       registered while rendering the footer (e.g. a form field's own JS,
+       added the moment that field renders) would otherwise be missed by
+       an earlier head-only output call. #}
+    {{ assets.js('head')|raw }}
     {{ assets.js('bottom')|raw }}
 {% endblock %}
 </body>

@@ -1,3 +1,18 @@
+# 0.1.4
+## 2026-08-23
+
+1. [](#bugfix)
+   * `.btn` background/text color now fall back to guaranteed-defined
+     tokens (`--q2-text-strong` / `--q2-bg`) when no accent color is
+     configured, instead of an undefined `--q2-accent` that rendered as
+     an invisible/transparent button — affected the form submit button and
+     any other `.btn` element
+   * JS assets are now only output once, at the very end of the page,
+     instead of also in `<head>` — a field's own script (e.g. the basic
+     captcha reload button) registers itself when that field renders,
+     which happens later, in the footer; the earlier `<head>` output call
+     could never have included it
+
 # 0.1.3
 ## 2026-08-23
 

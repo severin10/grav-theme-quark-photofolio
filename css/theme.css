@@ -1298,8 +1298,8 @@ a.btn,
   font-weight: 600;
   line-height: 1;
   letter-spacing: -0.1px;
-  color: var(--q2-accent-contrast);
-  background: var(--q2-accent);
+  color: var(--q2-accent-contrast, var(--q2-bg));
+  background: var(--q2-accent, var(--q2-text-strong));
   border: 0;
   border-radius: var(--q2-radius);
   cursor: pointer;
