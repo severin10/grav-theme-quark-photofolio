@@ -1,3 +1,12 @@
+# 0.1.6
+## 2026-08-25
+
+1. [](#bugfix)
+   * Nav no longer hardcodes a "Contact" link unconditionally — if a
+     `contact`-slugged child page already provides one (e.g. a dedicated
+     form page, since Grav bubbles a child page's `form:` up to the
+     parent), that one is used instead of duplicating it
+
 # 0.1.5
 ## 2026-08-23
 
