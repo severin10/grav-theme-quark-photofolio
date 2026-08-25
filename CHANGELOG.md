@@ -1,3 +1,11 @@
+# 0.1.8
+## 2026-08-25
+
+1. [](#bugfix)
+   * Footer's "Support" placeholder section no longer shows on other pages
+     (e.g. the contact form page) — it's now specific to the one-pager
+     itself, like the photo sections it sits below.
+
 # 0.1.7
 ## 2026-08-25
 
