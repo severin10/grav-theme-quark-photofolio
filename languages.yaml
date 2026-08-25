@@ -10,7 +10,6 @@ en:
     VIEWER:
       HINT: "Press Esc or click outside the photo to close"
     SECTIONS:
-      CONTACT_TITLE: "Contact"
       SUPPORT_TITLE: "Support"
 
 de:
@@ -25,5 +24,4 @@ de:
     VIEWER:
       HINT: "Esc drücken oder neben das Foto klicken zum Schliessen"
     SECTIONS:
-      CONTACT_TITLE: "Kontakt"
       SUPPORT_TITLE: "Unterstützen"

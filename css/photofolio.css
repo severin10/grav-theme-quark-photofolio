@@ -72,6 +72,10 @@
   color: var(--q2-text-muted);
 }
 
+.contact-page-container {
+  max-width: 40rem;
+}
+
 /* ---------- Photo sections ---------- */
 
 .photo-section .container {

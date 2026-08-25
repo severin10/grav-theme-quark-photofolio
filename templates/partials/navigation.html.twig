@@ -1,12 +1,8 @@
-{% set child_slugs = [] %}
 <nav class="section-nav" aria-label="{{ 'THEME_QUARK_PHOTOFOLIO.ARIA.PRIMARY_NAV'|t|e('html_attr') }}">
     <ul>
         {% for child in page.children %}
-            {% set child_slugs = child_slugs|merge([child.slug]) %}
-            <li><a href="#{{ child.slug }}">{{ child.title }}</a></li>
+            {% set has_photos = child.header.photos.items|default([])|length %}
+            <li><a href="{{ has_photos ? '#' ~ child.slug : child.url }}">{{ child.title }}</a></li>
         {% endfor %}
-        {% if 'contact' not in child_slugs %}
-            <li><a href="#contact">{{ 'THEME_QUARK_PHOTOFOLIO.SECTIONS.CONTACT_TITLE'|t }}</a></li>
-        {% endif %}
     </ul>
 </nav>

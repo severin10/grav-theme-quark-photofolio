@@ -1,17 +1,13 @@
 {#
-    Contact and Support are theme-owned slots, not theme-owned content: the
-    heading stays here so the section always has something to show and the
-    nav anchor always has somewhere to land, but the actual body is left to
-    whatever a site or plugin (e.g. a separate contact-form plugin) chooses
-    to put in these partials. Neither exists in the theme itself.
-#}
-<section id="contact" class="section placeholder-section">
-    <div class="container">
-        <h2>{{ 'THEME_QUARK_PHOTOFOLIO.SECTIONS.CONTACT_TITLE'|t }}</h2>
-        {% include 'partials/contact.html.twig' ignore missing %}
-    </div>
-</section>
+    Support is a theme-owned slot, not theme-owned content: the heading
+    stays here so the section always has something to show, but the actual
+    body is left to whatever a site or plugin chooses to put in
+    partials/support.html.twig. It doesn't exist in the theme itself.
 
+    Contact isn't handled this way: add a page using templates/form.html.twig
+    as a model (see the theme README) and it shows up in the nav on its own,
+    linking to its own URL — Grav's documented way to run a form.
+#}
 <section id="support" class="section placeholder-section">
     <div class="container">
         <h2>{{ 'THEME_QUARK_PHOTOFOLIO.SECTIONS.SUPPORT_TITLE'|t }}</h2>

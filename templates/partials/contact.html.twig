@@ -1,9 +1,0 @@
-{#
-    Generic: renders whatever form is defined in the current page's
-    frontmatter (a `form:` block), via Grav's own form plugin. No form
-    definition, spam-protection choice, or recipient address lives here —
-    that's site-specific content, not theme code.
-#}
-{% if form %}
-    {% include 'forms/form.html.twig' %}
-{% endif %}

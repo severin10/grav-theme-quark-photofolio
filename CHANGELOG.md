@@ -1,3 +1,23 @@
+# 0.1.7
+## 2026-08-25
+
+1. [](#new)
+   * `templates/form.html.twig` — a standalone-page template for a page
+     modeled on Grav's own documented forms example (a `form.md` file with
+     a `form:` block, no theme-specific setup needed). It shows up in the
+     nav automatically, linking to its own URL.
+2. [](#improved)
+   * Nav now links a non-photo child page (like the new form page) to its
+     own URL instead of an in-page anchor; photo-section children keep
+     their `#anchor` links as before. Superseds 0.1.6's bubbled-form
+     dedup, which assumed the form would stay embedded in the one-pager.
+3. [](#bugfix)
+   * Removed the "Contact" placeholder slot from the footer
+     (`partials/contact.html.twig`) — embedding a form inline in the
+     one-pager via Grav's child-to-parent form bubbling did not reliably
+     show it; a dedicated page (see above) is the documented, working
+     alternative. `partials/support.html.twig` is unaffected.
+
 # 0.1.6
 ## 2026-08-25
 
